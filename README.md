@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/Ruze11er/RetailPulse/actions/workflows/ci.yml/badge.svg)](https://github.com/Ruze11er/RetailPulse/actions/workflows/ci.yml)
 
-**Live demo:** _add your `*.streamlit.app` URL here after deploying (see [docs/deployment.md](docs/deployment.md))_
+**Live demo:** [retpulse.streamlit.app](https://retpulse.streamlit.app/). Click **Use sample data** to explore without uploading anything.
 
 **Sales & inventory analytics for small retailers.** Upload a sales spreadsheet
 and see what sells, what makes money, what stock isn't moving, and what to do
@@ -10,8 +10,8 @@ about it.
 
 Built with Python, DuckDB (SQL), and Streamlit.
 
-> **Status:** MVP complete and ready to deploy to Streamlit Community Cloud. Every number is
-> tested against hand-calculated answers, and the suite runs on Python 3.12 and 3.14.
+> **Status:** MVP complete and deployed on Streamlit Community Cloud. Every number is tested
+> against hand-calculated answers, and the suite runs on Python 3.12 and 3.14.
 
 ## What you get
 

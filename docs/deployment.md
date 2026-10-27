@@ -1,7 +1,8 @@
 # Deploying RetailPulse
 
-RetailPulse runs on **Streamlit Community Cloud** (free), deployed from the GitHub repo
-`Ruze11er/RetailPulse`, branch `main`, entry point `streamlit_app.py`.
+RetailPulse runs on **Streamlit Community Cloud** (free) at **https://retpulse.streamlit.app/**,
+deployed from the GitHub repo `Ruze11er/RetailPulse`, branch `main`, entry point
+`streamlit_app.py`.
 
 ## Settings at a glance
 
@@ -61,6 +62,24 @@ Then open the **Actions** tab on GitHub. The **CI** workflow should go green on 
    panel for errors.
 
 Every later `git push` to `main` redeploys the app automatically.
+
+### Make it viewable without signing in
+
+**Apps from a private GitHub repo are private by default**, so visitors are sent to a Streamlit
+login page. For a portfolio link, open the app, click **Share** (top right), then **Make this
+app public**. Or go to **App settings → Sharing → Who can view this app → "This app is public
+and searchable"**.
+
+This only changes who can *use* the app; the code stays private. Community Cloud allows one
+private app at a time.
+
+To check, open the URL in a private/incognito window. You should see the app, not a login page.
+From a terminal, `curl -sI https://retpulse.streamlit.app/` should **not** redirect to `/-/login`.
+
+**Optional: make the repo public too**, so reviewers can read the code and see the CI badge
+(GitHub → repo **Settings → General → Danger Zone → Change visibility**). Commits carry their
+author name and email, which become visible once the repo is public. To use GitHub's private
+`noreply` address for future commits, see GitHub's *email settings* page.
 
 ## Step 3: check the live app
 
