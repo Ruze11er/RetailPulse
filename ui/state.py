@@ -160,6 +160,39 @@ def setup() -> None:
                                    _rule_settings())
 
 
+def _use_sample() -> None:
+    st.session_state.use_sample = True
+
+
+def get_started(heading=st.subheader) -> None:
+    """The "no data yet" panel: what files to upload, and a one-click sample."""
+    heading("Load your data")
+    st.markdown("Upload your files in the **sidebar** on the left. If it's hidden, open it with "
+                "the **»** arrow at the top left.")
+    with st.container(border=True):
+        sales, products = st.columns(2, gap="large")
+        with sales:
+            st.markdown("##### :material/receipt_long: Sales CSV · required\n"
+                        "One row per item sold, with these columns:\n"
+                        "- **Order date**: `order_date`\n"
+                        "- **Order number**: `order_id`\n"
+                        "- **Product code**: `sku`\n"
+                        "- **Quantity** (negative for returns): `quantity`\n"
+                        "- **Price per unit**: `unit_price`")
+            st.caption("Optional: discount amount, product name and category. Common headers "
+                       "like *Qty*, *Unit Price* or *Invoice No* are recognised automatically.")
+        with products:
+            st.markdown("##### :material/inventory_2: Products CSV · optional\n"
+                        "One row per product (`sku` and `product_name`). Add these columns to "
+                        "unlock more:\n"
+                        "- **Cost per unit** (`unit_cost`) for profit and margin\n"
+                        "- **Stock on hand** (`on_hand_qty`) for inventory health")
+    with st.container(horizontal=True, vertical_alignment="center"):
+        st.button("Use sample data", key="get_started_sample", type="primary",
+                  icon=":material/play_arrow:", on_click=_use_sample)
+        st.caption("No file handy? Explore a year of sales from a fictional coffee shop.")
+
+
 def require_data() -> Context:
     """The current Context, or show why there isn't one and stop the page."""
     ctx = st.session_state.get("ctx")
@@ -167,11 +200,7 @@ def require_data() -> Context:
         return ctx
     report = st.session_state.get("report")
     if report is None:
-        st.info("Upload a sales CSV in the sidebar, or click **Use sample data** to explore.",
-                icon=":material/upload_file:")
-        st.markdown("Required columns: `order_date, order_id, sku, quantity, unit_price`. "
-                    "Optional: `discount_amount, product_name, category`. Add a products file "
-                    "with `unit_cost` and `on_hand_qty` to unlock profit and inventory.")
+        get_started(st.title)
     else:
         st.error("This data can't be analysed yet. See what needs fixing on the Data quality "
                  "page.", icon=":material/error:")

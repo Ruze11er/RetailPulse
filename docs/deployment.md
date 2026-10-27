@@ -87,8 +87,8 @@ Use the sample data, so the expected numbers are known:
 
 - [ ] The app opens on the **welcome page** (logo, gradient, no sidebar). **Privacy Policy** and
       **Terms of Use** open as dialogs. Check it on a phone too.
-- [ ] **Review Your CSV** opens **Overview** with the "Upload a sales CSV…" prompt, and the sidebar
-      shows the RetailPulse logo.
+- [ ] **Review Your CSV** opens **Overview** with the "Load your data" panel (sales and products
+      columns, plus a **Use sample data** button), and the sidebar shows the RetailPulse logo.
 - [ ] **Use sample data** shows: net revenue **219,863.42**, gross profit **96,437.50**, margin
       **45.2%**, orders **5,740**, average order value **38.81**.
 - [ ] The trend chart peaks in December. Hovering shows a tooltip.

@@ -75,7 +75,7 @@ def test_welcome_page_comes_first():
 
 def test_review_your_csv_opens_the_app():
     at = open_app()
-    assert any("Upload a sales CSV" in i.value for i in at.info)
+    assert any(t.value == "Load your data" for t in at.title)
     assert at.button(key="sample_button")
     assert at.button(key="sidebar_privacy") and at.button(key="sidebar_terms")
 
@@ -94,7 +94,17 @@ def test_pages_without_data_explain_what_to_do(page):
     at = open_app()
     at.switch_page(page).run()
     assert not at.exception
-    assert any("Upload a sales CSV" in i.value for i in at.info)
+    text = " ".join(m.value for m in at.markdown)
+    assert "Sales CSV · required" in text and "Products CSV · optional" in text
+    assert at.button(key="get_started_sample")
+
+
+def test_get_started_sample_button_loads_the_sample(expected):
+    at = open_app()
+    at.button(key="get_started_sample").click().run()
+    assert not at.exception
+    values = metric_values(at)
+    assert values["Net revenue"] == fmt.money(expected["all"]["net_revenue"])
 
 
 def test_overview_with_sample_data(sample_app, expected):

@@ -18,7 +18,9 @@ primaryColor = "#2a78d6"
 linkColor = "#1f62b8"
 secondaryBackgroundColor = "#f3f6fb"
 borderColor = "#dfe5ee"
+codeTextColor = "#1f4f8f"
 
 [theme.dark]
 primaryColor = "#3987e5"
 linkColor = "#6aa8f0"
+codeTextColor = "#a9c7f0"

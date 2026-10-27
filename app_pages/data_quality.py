@@ -11,8 +11,7 @@ from ui import state
 st.title("Data quality")
 report = st.session_state.get("report")
 if report is None:
-    st.info("Upload a sales CSV in the sidebar, or click **Use sample data** to explore.",
-            icon=":material/upload_file:")
+    state.get_started()
     st.stop()
 con = state.connection()
 
