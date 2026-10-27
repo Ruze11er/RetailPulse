@@ -69,6 +69,10 @@ the code is wrong, or the definition changed. If the definition changed, update
 | 9 | SKU-999 | 3.00 | 1838.00 → 100% | 99.84% | C |
 | — | SKU-007 | 0 | — | — | C (no revenue) |
 
+**ABC summary:** A = 3 SKUs, 975 + 455.40 + 130 = 1560.40 (84.90%) · B = 3 SKUs,
+102.60 + 72 + 42 = 216.60 (11.78%) · C = 4 SKUs (including SKU-007 with no sales),
+40 + 18 + 3 + 0 = 61.00 (3.32%). Sum = 1838 ✓
+
 ### Inventory (as of 2026-03-31; velocity window 03-02 to 03-31; dead window 01-31 to 03-31)
 
 | SKU | On hand | Units in window | Window days | Avg/day | Days of cover | Status |

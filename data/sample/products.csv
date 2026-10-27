@@ -1,0 +1,39 @@
+SKU,Product Name,Category,Unit Cost,On Hand
+CF-001,House Blend 1kg,Coffee,13.00,18
+CF-002,Espresso Roast 1kg,Coffee,14.00,26
+CF-003,Decaf Blend 500g,Coffee,7.50,52
+CF-004,Ethiopia Yirgacheffe 250g,Coffee,8.00,72
+CF-005,Colombia Huila 250g,Coffee,7.80,50
+CF-006,Cold Brew Concentrate 1L,Coffee,5.00,103
+CF-007,Instant Coffee Sticks 20pk,Coffee,2.80,99
+CF-008,Coffee Pods 30pk,Coffee,6.00,92
+CF-009,Nitro Cold Brew 4pk,Coffee,6.20,143
+TE-001,English Breakfast 80 bags,Tea,2.20,68
+TE-002,Green Tea 50 bags,Tea,2.50,121
+TE-003,Chai Spice Loose 200g,Tea,4.00,17
+TE-004,Herbal Sampler,Tea,,57
+TE-005,Ceremonial Matcha 100g,Tea,11.00,30
+EQ-001,Espresso Machine,Equipment,399.00,7
+EQ-002,Burr Grinder,Equipment,78.00,10
+EQ-003,Gooseneck Kettle,Equipment,27.00,9
+EQ-004,French Press 1L,Equipment,17.00,18
+EQ-005,Pour-Over Dripper,Equipment,9.00,24
+EQ-006,Milk Frother,Equipment,14.00,12
+EQ-007,Digital Coffee Scale,Equipment,19.00,0
+EQ-008,Stovetop Moka Pot,Equipment,15.00,35
+HW-001,Ceramic Mug,Homeware,4.50,33
+HW-002,Travel Tumbler,Homeware,10.00,31
+HW-003,Glass Cup Set,Homeware,8.00,35
+HW-004,Canvas Tote Bag,Homeware,5.00,35
+HW-005,Barista Apron,Homeware,11.00,33
+HW-006,Latte Art Pitcher,Homeware,8.00,6
+HW-007,Oat Latte Kit,Homeware,9.00,45
+SN-001,Paper Cups 50pk,Snacks & Supplies,7.20,82
+SN-002,Almond Biscotti,Snacks & Supplies,1.80,75
+SN-003,Dark Chocolate Bar,Snacks & Supplies,1.40,75
+SN-004,Oat Milk 1L,Snacks & Supplies,,78
+SN-005,Vanilla Syrup,Snacks & Supplies,3.80,68
+SN-006,Caramel Syrup,Snacks & Supplies,3.80,29
+SN-007,Café Crème Syrup,Snacks & Supplies,4.00,15
+SN-008,Gingerbread Cookies,Snacks & Supplies,2.80,44
+004512,Filter Papers 100,Snacks & Supplies,1.60,165

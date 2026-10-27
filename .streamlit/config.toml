@@ -1,0 +1,6 @@
+[server]
+# Keep uploads small enough for the free Streamlit Community Cloud tier.
+maxUploadSize = 25
+
+[browser]
+gatherUsageStats = false

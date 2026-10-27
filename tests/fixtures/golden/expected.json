@@ -55,6 +55,11 @@
       "2026-02": 348.40,
       "2026-03": 992.60
     },
+    "abc_summary": {
+      "A": {"skus": 3, "net_revenue": 1560.40, "revenue_share": 0.8490},
+      "B": {"skus": 3, "net_revenue": 216.60,  "revenue_share": 0.1178},
+      "C": {"skus": 4, "net_revenue": 61.00,   "revenue_share": 0.0332}
+    },
     "category_net_revenue": {
       "Equipment": 1123.00,
       "Coffee": 598.00,
