@@ -62,7 +62,11 @@ def run_sql_file(
 def fetch_dicts(
     con: duckdb.DuckDBPyConnection, sql: str, params: dict[str, Any] | None = None
 ) -> list[dict[str, Any]]:
-    """Run a query and return every row as a dict (fully fetched, see CLAUDE.md)."""
+    """Run a query and return every row as a dict.
+
+    Results are always fully fetched: in DuckDB 2.0 a partly-read result makes later
+    con.sql() calls on the same connection raise ResourceInUseException.
+    """
     result = con.execute(sql, params or {})
     columns = [col[0] for col in result.description]
     return [dict(zip(columns, row, strict=True)) for row in result.fetchall()]

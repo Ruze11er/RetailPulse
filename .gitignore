@@ -7,3 +7,6 @@ __pycache__/
 *.duckdb
 *.duckdb.wal
 .streamlit/secrets.toml
+
+# Personal Claude Code instructions (kept local, never published)
+CLAUDE.local.md
