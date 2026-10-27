@@ -7,7 +7,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    # A normal run takes 2-4 minutes. Stop a stuck job instead of letting it run for 6 hours.
+    timeout-minutes: 15
     strategy:
+      fail-fast: false  # let the other Python version finish, to see if a failure is version-specific
       matrix:
         python-version: ["3.12", "3.14"]  # 3.12 = deployed (Streamlit Cloud default), 3.14 = local dev
     steps:
@@ -18,4 +21,4 @@ jobs:
           cache: pip
       - run: pip install -r requirements-dev.txt
       - run: ruff check .
-      - run: pytest -q
+      - run: pytest -q --durations=10  # lists the 10 slowest tests in the log

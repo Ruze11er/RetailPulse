@@ -7,6 +7,9 @@ requires-python = ">=3.12"
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+# If one test runs longer than this (seconds), print every thread's stack trace, so a hang in
+# CI shows where it is stuck. The test keeps running.
+faulthandler_timeout = 180
 
 [tool.ruff]
 line-length = 100
