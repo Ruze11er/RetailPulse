@@ -27,6 +27,16 @@ SAMPLE_DIR = Path(__file__).parents[1] / "data" / "sample"
 DATA_PAGE = "app_pages/data_quality.py"
 PRESETS = {"All data": None, "Last 7 days": 7, "Last 30 days": 30, "Last 90 days": 90,
            "Custom range": "custom"}
+# Set by the welcome page's "Review Your CSV" button; the main app is shown once it's True.
+ENTERED = "entered_app"
+
+
+def entered() -> bool:
+    return bool(st.session_state.get(ENTERED))
+
+
+def enter() -> None:
+    st.session_state[ENTERED] = True
 
 
 @dataclass(frozen=True)

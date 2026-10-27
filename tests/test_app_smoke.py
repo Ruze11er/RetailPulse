@@ -47,17 +47,51 @@ def expected():
     con.close()
 
 
+def open_app() -> AppTest:
+    """Start a session and click past the welcome page."""
+    at = AppTest.from_file(APP, default_timeout=60).run()
+    at.button(key="enter_button").click().run()
+    assert not at.exception
+    return at
+
+
 @pytest.fixture
 def sample_app() -> AppTest:
-    at = AppTest.from_file(APP, default_timeout=60).run()
+    at = open_app()
     at.button(key="sample_button").click().run()
     assert not at.exception
     return at
 
 
+def test_welcome_page_comes_first():
+    at = AppTest.from_file(APP, default_timeout=60).run()
+    assert not at.exception
+    assert at.button(key="enter_button").label == "Review Your CSV"
+    assert not at.sidebar.get("file_uploader")  # the app's sidebar isn't shown yet
+    assert not at.metric
+    html = " ".join(h.proto.body for h in at.get("html"))
+    assert "RetailPulse" in html and "rp-logo" in html
+
+
+def test_review_your_csv_opens_the_app():
+    at = open_app()
+    assert any("Upload a sales CSV" in i.value for i in at.info)
+    assert at.button(key="sample_button")
+    assert at.button(key="sidebar_privacy") and at.button(key="sidebar_terms")
+
+
+@pytest.mark.parametrize("key, heading", [("welcome_privacy", "What you upload"),
+                                          ("welcome_terms", "Information, not advice")])
+def test_legal_links_open_their_text(key, heading):
+    at = AppTest.from_file(APP, default_timeout=60).run()
+    at.button(key=key).click().run()
+    assert not at.exception
+    assert any(heading in m.value for m in at.markdown)
+
+
 @pytest.mark.parametrize("page", PAGES)
 def test_pages_without_data_explain_what_to_do(page):
-    at = AppTest.from_file(APP, default_timeout=60).run()
+    at = open_app()
     at.switch_page(page).run()
     assert not at.exception
     assert any("Upload a sales CSV" in i.value for i in at.info)

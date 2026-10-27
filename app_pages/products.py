@@ -25,7 +25,7 @@ st.caption(f"Products ranked by net revenue. A = the top sellers that make up th
 cols = st.columns(3)
 for col, row in zip(cols, summary, strict=True):
     col.metric(f"Class {row['abc_class']}", f"{fmt.pct(row['revenue_share'])} of revenue",
-               help=f"{fmt.money(row['net_revenue'])} net revenue")
+               help=f"{fmt.money(row['net_revenue'])} net revenue", border=True)
     col.caption(f"{row['skus']} product(s)")
 
 # ------------------------------------------------------------------- top sellers

@@ -32,19 +32,23 @@ def delta(key: str):
 
 has_costs = ctx.report.has_costs
 row1 = st.columns(3)
-row1[0].metric("Net revenue", fmt.money(k["net_revenue"]), delta("net_revenue"))
+row1[0].metric("Net revenue", fmt.money(k["net_revenue"]), delta("net_revenue"), border=True)
 row1[1].metric("Gross profit", fmt.money(k["gross_profit"]) if has_costs else fmt.DASH,
                delta("gross_profit") if has_costs else None,
-               help="Net revenue minus cost of goods, for products with a known unit cost.")
+               help="Net revenue minus cost of goods, for products with a known unit cost.",
+               border=True)
 row1[2].metric("Gross margin", fmt.pct(k["gross_margin_pct"]) if has_costs else fmt.DASH,
                fmt.pp_change(k["gross_margin_pct"], prev["gross_margin_pct"])
-               if prev and has_costs else None)
+               if prev and has_costs else None, border=True)
 row2 = st.columns(3)
 row2[0].metric("Orders", fmt.number(k["orders"]), delta("orders"),
-               help="Orders with at least one item sold. Return-only orders aren't counted.")
+               help="Orders with at least one item sold. Return-only orders aren't counted.",
+               border=True)
 row2[1].metric("Average order value", fmt.money(k["average_order_value"]),
-               delta("average_order_value"), help="(Gross sales − discounts) ÷ orders.")
-row2[2].metric("Units sold (net of returns)", fmt.number(k["net_units"]), delta("net_units"))
+               delta("average_order_value"), help="(Gross sales − discounts) ÷ orders.",
+               border=True)
+row2[2].metric("Units sold (net of returns)", fmt.number(k["net_units"]), delta("net_units"),
+               border=True)
 
 notes = [f"Gross sales {fmt.money(k['gross_sales'])} − discounts {fmt.money(k['discounts'])} "
          f"− returns {fmt.money(k['returns'])} = net revenue {fmt.money(k['net_revenue'])}."]

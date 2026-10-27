@@ -26,9 +26,9 @@ def show_issues(issues: list[Issue], show) -> None:
 def show_file_report(file_report: FileReport, label: str) -> None:
     st.subheader(label)
     c1, c2, c3 = st.columns(3)
-    c1.metric("Rows read", f"{file_report.raw_rows:,}")
-    c2.metric("Accepted", f"{file_report.accepted_rows:,}")
-    c3.metric("Rejected", f"{file_report.rejected_rows:,}")
+    c1.metric("Rows read", f"{file_report.raw_rows:,}", border=True)
+    c2.metric("Accepted", f"{file_report.accepted_rows:,}", border=True)
+    c3.metric("Rejected", f"{file_report.rejected_rows:,}", border=True)
     show_issues(file_report.blocking, st.error)
     show_issues(file_report.warnings, st.warning)
     show_issues(file_report.info, st.info)
@@ -51,9 +51,11 @@ if report.ok:
                icon=":material/check_circle:")
     st.subheader("What you can analyse")
     c1, c2, c3 = st.columns(3)
-    c1.metric("Sales & best sellers", "Ready")
-    c2.metric("Profit & margin", "Ready" if report.has_costs else "Needs unit_cost")
-    c3.metric("Inventory health", "Ready" if report.has_inventory else "Needs on_hand_qty")
+    c1.metric("Sales & best sellers", "Ready", border=True)
+    c2.metric("Profit & margin", "Ready" if report.has_costs else "Needs unit_cost",
+              border=True)
+    c3.metric("Inventory health", "Ready" if report.has_inventory else "Needs on_hand_qty",
+              border=True)
     show_issues(report.cross_warnings, st.warning)
 else:
     st.error("This data can't be analysed yet. Fix the problems below and upload again.",

@@ -85,7 +85,10 @@ author name and email, which become visible once the repo is public. To use GitH
 
 Use the sample data, so the expected numbers are known:
 
-- [ ] The app opens on **Overview** with the "Upload a sales CSV…" prompt.
+- [ ] The app opens on the **welcome page** (logo, gradient, no sidebar). **Privacy Policy** and
+      **Terms of Use** open as dialogs. Check it on a phone too.
+- [ ] **Review Your CSV** opens **Overview** with the "Upload a sales CSV…" prompt, and the sidebar
+      shows the RetailPulse logo.
 - [ ] **Use sample data** shows: net revenue **219,863.42**, gross profit **96,437.50**, margin
       **45.2%**, orders **5,740**, average order value **38.81**.
 - [ ] The trend chart peaks in December. Hovering shows a tooltip.
@@ -114,6 +117,7 @@ Use the sample data, so the expected numbers are known:
   it awake.
 - **Updates:** pushing to `main` redeploys. Community Cloud allows at most five updates per minute
   from GitHub.
+- **Welcome page:** every new session (including a page refresh) starts on the welcome page.
 - **Python version:** you can't change it in place. Delete the app, then redeploy with the same
   subdomain and the new version (Advanced settings).
 

@@ -1,0 +1,153 @@
+/* Welcome page only (loaded by app_pages/welcome.py).
+   Brand palette: navy #0a1730 → blue #1a4fa8, accent mint #5fe3c4, primary blue #2a78d6.
+   Text colours are set on our own classes, never on .stApp, so dialogs keep the theme's colours. */
+
+.stApp {
+  background:
+    radial-gradient(1100px 560px at 88% -8%, rgba(95, 227, 196, 0.20), transparent 62%),
+    radial-gradient(900px 520px at -8% 108%, rgba(59, 143, 240, 0.38), transparent 60%),
+    linear-gradient(140deg, #0a1730 0%, #10295a 48%, #1a4fa8 100%);
+}
+[data-testid="stHeader"] { background: transparent; }
+[data-testid="stToolbar"] button, [data-testid="stToolbar"] a { color: rgba(255, 255, 255, 0.85); }
+.stMainBlockContainer {
+  max-width: 1080px;
+  padding: clamp(2.5rem, 8vh, 5rem) 1rem 2rem;
+}
+
+/* ---------------------------------------------------------------- hero */
+.rp-hero {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  color: #ffffff; gap: 0.25rem;
+}
+.rp-brand {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  gap: 0.9rem; margin-bottom: 1.6rem;
+  animation: rp-rise 0.7s ease-out both;
+}
+.rp-logo {
+  width: clamp(56px, 9vw, 76px); height: auto; border-radius: 18px;
+  box-shadow: 0 12px 32px -10px rgba(10, 23, 48, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  animation: rp-glow 4s ease-in-out 1s infinite;
+}
+.rp-name {
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 750; letter-spacing: -0.02em;
+  color: #ffffff;
+}
+.rp-eyebrow {
+  margin: 0 0 1rem; padding: 0.35rem 0.9rem; border-radius: 999px;
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  color: #bff5e7; background: rgba(95, 227, 196, 0.12); border: 1px solid rgba(95, 227, 196, 0.3);
+  animation: rp-rise 0.7s ease-out 0.1s both;
+}
+.rp-hero h1.rp-title {
+  margin: 0; padding: 0; max-width: 22ch; text-wrap: balance;
+  font-size: clamp(2.1rem, 5.5vw, 3.6rem); line-height: 1.08; font-weight: 750;
+  letter-spacing: -0.03em; color: #ffffff;
+  animation: rp-rise 0.7s ease-out 0.2s both;
+}
+.rp-title span {
+  display: block;
+  background: linear-gradient(90deg, #5fe3c4, #8fc2ff);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.rp-lead {
+  max-width: 60ch; margin: 1.2rem 0 0.6rem;
+  font-size: clamp(1rem, 1.6vw, 1.15rem); line-height: 1.6; color: rgba(232, 240, 255, 0.86);
+  animation: rp-rise 0.7s ease-out 0.3s both;
+}
+
+/* ----------------------------------------------------------------- CTA */
+.st-key-welcome_cta { animation: rp-rise 0.7s ease-out 0.4s both; }
+.st-key-enter_button button {
+  min-height: 3.4rem; padding: 0.8rem 2.2rem; border: 0; border-radius: 999px;
+  background: #ffffff; color: #0f2a5c;
+  font-size: 1.1rem; font-weight: 700;
+  box-shadow: 0 14px 34px -12px rgba(95, 227, 196, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.st-key-enter_button button * { color: inherit; font-size: inherit; font-weight: inherit; }
+.st-key-enter_button button:hover {
+  background: #eefcf8; color: #0a1f47; transform: translateY(-2px);
+  box-shadow: 0 20px 40px -12px rgba(95, 227, 196, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+.st-key-enter_button button:active { transform: translateY(0); }
+.st-key-enter_button button:focus-visible { outline: 3px solid #5fe3c4; outline-offset: 3px; }
+
+.rp-trust {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 1.4rem;
+  margin: 0.2rem 0 0; padding: 0; list-style: none;
+  font-size: 0.9rem; color: rgba(232, 240, 255, 0.75);
+  animation: rp-rise 0.7s ease-out 0.5s both;
+}
+.rp-trust li { display: flex; align-items: center; gap: 0.45rem; }
+.rp-trust li::before {
+  content: ""; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: #5fe3c4;
+}
+
+/* ------------------------------------------------------------ features */
+.rp-features {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  margin-top: clamp(1.5rem, 5vh, 3rem);
+}
+.rp-card {
+  padding: 1.4rem 1.3rem; border-radius: 16px; color: #ffffff;
+  background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+  animation: rp-rise 0.7s ease-out both;
+}
+.rp-card:nth-child(1) { animation-delay: 0.55s; }
+.rp-card:nth-child(2) { animation-delay: 0.65s; }
+.rp-card:nth-child(3) { animation-delay: 0.75s; }
+.rp-card:nth-child(4) { animation-delay: 0.85s; }
+.rp-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.1); border-color: rgba(95, 227, 196, 0.45);
+}
+.rp-icon {
+  display: block; width: 2.5rem; height: 2.5rem; padding: 0.55rem; border-radius: 12px;
+  background: rgba(95, 227, 196, 0.12);
+}
+.rp-card h3 {
+  margin: 0.9rem 0 0.35rem; padding: 0;
+  font-size: 1.05rem; font-weight: 700; color: #ffffff;
+}
+.rp-card p { margin: 0; font-size: 0.93rem; line-height: 1.5; color: rgba(232, 240, 255, 0.78); }
+
+/* -------------------------------------------------------------- footer */
+.st-key-welcome_legal {
+  margin-top: clamp(1.5rem, 5vh, 3rem); padding-top: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.st-key-welcome_legal button { color: rgba(232, 240, 255, 0.8); }
+.st-key-welcome_legal button * { color: inherit; }
+.st-key-welcome_legal button:hover { color: #ffffff; text-decoration: underline; }
+.st-key-welcome_legal button:focus-visible { outline: 2px solid #5fe3c4; outline-offset: 2px; }
+.rp-copy {
+  margin: 0; text-align: center; font-size: 0.82rem; color: rgba(232, 240, 255, 0.55);
+}
+
+/* ---------------------------------------------------------- responsive */
+@media (max-width: 960px) { .rp-features { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+  .rp-features { grid-template-columns: 1fr; }
+  .rp-eyebrow { font-size: 0.72rem; letter-spacing: 0.02em; padding: 0.35rem 0.75rem; }
+}
+
+/* ----------------------------------------------------------- animation */
+@keyframes rp-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes rp-glow {
+  0%, 100% { box-shadow: 0 12px 32px -10px rgba(10, 23, 48, 0.8),
+                         0 0 0 1px rgba(255, 255, 255, 0.12); }
+  50% { box-shadow: 0 12px 36px -8px rgba(95, 227, 196, 0.55),
+                    0 0 0 1px rgba(255, 255, 255, 0.2); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rp-hero *, .rp-trust, .rp-card, .st-key-welcome_cta, .st-key-enter_button button {
+    animation: none !important; transition: none !important;
+  }
+}

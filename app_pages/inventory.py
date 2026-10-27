@@ -30,16 +30,17 @@ def value(amount):
 
 
 cols = st.columns(5)
-cols[0].metric("Stock value at cost", value(totals["stock_value_at_cost"]))
+cols[0].metric("Stock value at cost", value(totals["stock_value_at_cost"]), border=True)
 cols[1].metric("Slow-moving stock", value(totals["slow_stock_value"]),
-               help=f"Over {t.slow_moving_cover_days} days of stock at the current sales rate.")
+               help=f"Over {t.slow_moving_cover_days} days of stock at the current sales rate.",
+               border=True)
 cols[1].caption(f"{totals['slow_skus']} product(s)")
 cols[2].metric("Dead stock", value(totals["dead_stock_value"]),
-               help=f"In stock, but no sales in the last {t.dead_stock_days} days.")
+               help=f"In stock, but no sales in the last {t.dead_stock_days} days.", border=True)
 cols[2].caption(f"{totals['dead_skus']} product(s)")
 cols[3].metric("Low cover", f"{totals['low_cover_skus']} product(s)",
-               help=f"Under {t.low_cover_days} days of stock left.")
-cols[4].metric("Out of stock", f"{totals['out_of_stock_skus']} product(s)")
+               help=f"Under {t.low_cover_days} days of stock left.", border=True)
+cols[4].metric("Out of stock", f"{totals['out_of_stock_skus']} product(s)", border=True)
 if not has_costs:
     st.caption("Add `unit_cost` to the products file to see stock values.")
 
