@@ -1,0 +1,36 @@
+order_date,order_id,sku,quantity,unit_price,discount_amount,product_name,category
+2026-01-05,O-1001,SKU-003,1,45.00,,Pour-Over Kettle,Equipment
+2026-01-05,O-1001,SKU-001,2,22.00,,Espresso Beans 1kg,Coffee
+2026-01-12,O-1002,SKU-003,1,45.00,5.00,Pour-Over Kettle,Equipment
+2026-01-12,O-1002,SKU-004,3,2.00,,Paper Filters (100),Coffee
+2026-01-20,O-1003,SKU-009,1,250.00,,Espresso Machine,Equipment
+2026-01-20,O-1003,SKU-001,1,22.00,,Espresso Beans 1kg,Coffee
+2026-01-28,O-1004,SKU-003,2,45.00,,Pour-Over Kettle,Equipment
+2026-02-02,O-1005,SKU-002,4,9.00,,Ceramic Mug,Homeware
+2026-02-02,O-1005,SKU-005,6,3.50,,Oat Milk 1L,Grocery
+2026-02-03,O-1006,SKU-003,-1,45.00,,Pour-Over Kettle,Equipment
+2026-02-10,O-1007,SKU-001,3,22.00,6.60,Espresso Beans 1kg,Coffee
+2026-02-10,O-1007,SKU-999,2,1.00,,Sample Sachet,
+2026-02-14,O-1008,SKU-009,1,250.00,25.00,Espresso Machine,Equipment
+2026-02-14,O-1008,SKU-002,2,9.00,,Ceramic Mug,Homeware
+2026-02-20,O-1009,SKU-004,10,2.00,,Paper Filters (100),Coffee
+2026-02-20,O-1009,00810,2,6.00,,Grinder Brush,Equipment
+2026-03-03,O-1010,SKU-001,4,22.00,,Espresso Beans 1kg,Coffee
+2026-03-03,O-1010,SKU-005,4,3.50,,Oat Milk 1L,Grocery
+2026-03-08,O-1011,SKU-009,1,250.00,,Espresso Machine,Equipment
+2026-03-08,O-1011,SKU-001,2,22.00,,Espresso Beans 1kg,Coffee
+2026-03-10,O-1012,SKU-002,1,9.00,,Ceramic Mug,Homeware
+2026-03-10,O-1012,SKU-001,-1,22.00,,Espresso Beans 1kg,Coffee
+2026-03-15,O-1013,SKU-001,5,22.00,,Espresso Beans 1kg,Coffee
+2026-03-15,O-1013,SKU-004,5,2.00,,Paper Filters (100),Coffee
+2026-03-15,O-1013,00810,1,6.00,,Grinder Brush,Equipment
+2026-03-15,O-1013,SKU-004,2,2.00,,Paper Filters (100),Coffee
+2026-03-22,O-1014,SKU-006,2,18.00,,Cold Brew Bottle,Coffee
+2026-03-22,O-1014,SKU-005,2,3.50,,Oat Milk 1L,Grocery
+2026-03-26,O-1015,SKU-009,1,250.00,,Espresso Machine,Equipment
+2026-03-26,O-1015,SKU-006,1,18.00,,Cold Brew Bottle,Coffee
+2026-03-29,O-1016,SKU-001,3,22.00,,Espresso Beans 1kg,Coffee
+2026-03-29,O-1016,SKU-002,1,9.00,,Ceramic Mug,Homeware
+2026-03-31,O-1017,SKU-001,2,22.00,,Espresso Beans 1kg,Coffee
+2026-03-31,O-1017,SKU-006,3,18.00,5.40,Cold Brew Bottle,Coffee
+2026-03-31,O-1017,SKU-999,1,1.00,,Sample Sachet,

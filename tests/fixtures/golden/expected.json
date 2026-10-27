@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "description": "Hand-calculated expected outputs for the golden dataset. Definitions: docs/metrics.md. Worked calculations: tests/fixtures/golden/README.md.",
+    "as_of_date": "2026-03-31",
+    "velocity_window": ["2026-03-02", "2026-03-31"],
+    "dead_stock_window": ["2026-01-31", "2026-03-31"],
+    "thresholds": {
+      "velocity_window_days": 30,
+      "dead_stock_days": 60,
+      "slow_moving_cover_days": 90,
+      "low_cover_days": 14,
+      "abc_a_cutoff": 0.80,
+      "abc_b_cutoff": 0.95,
+      "low_margin_pct": 0.20,
+      "clearance_min_stock_value": 100.00,
+      "data_gap_min_cost_coverage": 0.90
+    },
+    "tolerance": {
+      "money": 0.005,
+      "ratio": 0.0001,
+      "note": "Money values are exact (decimal arithmetic). Ratios are rounded to 4 dp here; compare with abs tolerance."
+    }
+  },
+
+  "data_quality": {
+    "sales_raw_rows": 35,
+    "sales_accepted_rows": 35,
+    "sales_rejected_rows": 0,
+    "products_raw_rows": 9,
+    "products_accepted_rows": 9,
+    "warnings": {
+      "sales_skus_not_in_products": ["SKU-999"],
+      "products_missing_unit_cost": ["SKU-005"]
+    }
+  },
+
+  "full_range": {
+    "date_range": ["2026-01-05", "2026-03-31"],
+    "kpis": {
+      "gross_sales": 1947.00,
+      "discounts": 42.00,
+      "returns": 67.00,
+      "net_revenue": 1838.00,
+      "net_units": 80,
+      "orders": 16,
+      "average_order_value": 119.0625,
+      "costed_net_revenue": 1793.00,
+      "cogs": 1341.00,
+      "gross_profit": 452.00,
+      "gross_margin_pct": 0.2521,
+      "cost_coverage_pct": 0.9755
+    },
+    "monthly_net_revenue": {
+      "2026-01": 497.00,
+      "2026-02": 348.40,
+      "2026-03": 992.60
+    },
+    "category_net_revenue": {
+      "Equipment": 1123.00,
+      "Coffee": 598.00,
+      "Homeware": 72.00,
+      "Grocery": 42.00,
+      "Uncategorized": 3.00
+    },
+    "sku_metrics": {
+      "SKU-009": {"gross_sales": 1000.00, "discounts": 25.00, "returns": 0.00,  "net_revenue": 975.00, "net_units": 4,  "cogs": 860.00, "gross_profit": 115.00, "gross_margin_pct": 0.1179, "abc_rank": 1, "cumulative_share": 0.5305, "abc_class": "A"},
+      "SKU-001": {"gross_sales": 484.00,  "discounts": 6.60,  "returns": 22.00, "net_revenue": 455.40, "net_units": 21, "cogs": 252.00, "gross_profit": 203.40, "gross_margin_pct": 0.4466, "abc_rank": 2, "cumulative_share": 0.7782, "abc_class": "A"},
+      "SKU-003": {"gross_sales": 180.00,  "discounts": 5.00,  "returns": 45.00, "net_revenue": 130.00, "net_units": 3,  "cogs": 90.00,  "gross_profit": 40.00,  "gross_margin_pct": 0.3077, "abc_rank": 3, "cumulative_share": 0.8490, "abc_class": "A"},
+      "SKU-006": {"gross_sales": 108.00,  "discounts": 5.40,  "returns": 0.00,  "net_revenue": 102.60, "net_units": 6,  "cogs": 48.00,  "gross_profit": 54.60,  "gross_margin_pct": 0.5322, "abc_rank": 4, "cumulative_share": 0.9048, "abc_class": "B"},
+      "SKU-002": {"gross_sales": 72.00,   "discounts": 0.00,  "returns": 0.00,  "net_revenue": 72.00,  "net_units": 8,  "cogs": 32.00,  "gross_profit": 40.00,  "gross_margin_pct": 0.5556, "abc_rank": 5, "cumulative_share": 0.9440, "abc_class": "B"},
+      "SKU-005": {"gross_sales": 42.00,   "discounts": 0.00,  "returns": 0.00,  "net_revenue": 42.00,  "net_units": 12, "cogs": null,   "gross_profit": null,   "gross_margin_pct": null,   "abc_rank": 6, "cumulative_share": 0.9668, "abc_class": "B"},
+      "SKU-004": {"gross_sales": 40.00,   "discounts": 0.00,  "returns": 0.00,  "net_revenue": 40.00,  "net_units": 20, "cogs": 50.00,  "gross_profit": -10.00, "gross_margin_pct": -0.2500, "abc_rank": 7, "cumulative_share": 0.9886, "abc_class": "C"},
+      "00810":   {"gross_sales": 18.00,   "discounts": 0.00,  "returns": 0.00,  "net_revenue": 18.00,  "net_units": 3,  "cogs": 9.00,   "gross_profit": 9.00,   "gross_margin_pct": 0.5000, "abc_rank": 8, "cumulative_share": 0.9984, "abc_class": "C"},
+      "SKU-999": {"gross_sales": 3.00,    "discounts": 0.00,  "returns": 0.00,  "net_revenue": 3.00,   "net_units": 3,  "cogs": null,   "gross_profit": null,   "gross_margin_pct": null,   "abc_rank": 9, "cumulative_share": 1.0000, "abc_class": "C"},
+      "SKU-007": {"gross_sales": 0.00,    "discounts": 0.00,  "returns": 0.00,  "net_revenue": 0.00,   "net_units": 0,  "cogs": 0.00,   "gross_profit": 0.00,   "gross_margin_pct": null,   "abc_rank": null, "cumulative_share": null, "abc_class": "C"}
+    }
+  },
+
+  "march_only": {
+    "date_range": ["2026-03-01", "2026-03-31"],
+    "kpis": {
+      "gross_sales": 1020.00,
+      "discounts": 5.40,
+      "returns": 22.00,
+      "net_revenue": 992.60,
+      "net_units": 40,
+      "orders": 8,
+      "average_order_value": 126.825,
+      "costed_net_revenue": 970.60,
+      "cogs": 686.50,
+      "gross_profit": 284.10,
+      "gross_margin_pct": 0.2927,
+      "cost_coverage_pct": 0.9778
+    }
+  },
+
+  "inventory": {
+    "_note": "Inventory metrics always use the as-of date and ignore the UI date filter. avg_daily_units = max(net units in window, 0) / window_days. days_of_cover null = infinite (stock but no recent sales).",
+    "skus": {
+      "SKU-001": {"on_hand_qty": 6,    "first_sale_date": "2026-01-05", "last_sale_date": "2026-03-31", "units_in_window": 15, "window_days": 30, "avg_daily_units": 0.5000, "days_of_cover": 12.0000,   "stock_value_at_cost": 72.00,  "status": "low_cover"},
+      "SKU-002": {"on_hand_qty": 200,  "first_sale_date": "2026-02-02", "last_sale_date": "2026-03-29", "units_in_window": 2,  "window_days": 30, "avg_daily_units": 0.0667, "days_of_cover": 3000.0000, "stock_value_at_cost": 800.00, "status": "slow"},
+      "SKU-003": {"on_hand_qty": 5,    "first_sale_date": "2026-01-05", "last_sale_date": "2026-01-28", "units_in_window": 0,  "window_days": 30, "avg_daily_units": 0.0000, "days_of_cover": null,      "stock_value_at_cost": 150.00, "status": "dead"},
+      "SKU-004": {"on_hand_qty": 4,    "first_sale_date": "2026-01-12", "last_sale_date": "2026-03-15", "units_in_window": 7,  "window_days": 30, "avg_daily_units": 0.2333, "days_of_cover": 17.1429,   "stock_value_at_cost": 10.00,  "status": "healthy"},
+      "SKU-005": {"on_hand_qty": 12,   "first_sale_date": "2026-02-02", "last_sale_date": "2026-03-22", "units_in_window": 6,  "window_days": 30, "avg_daily_units": 0.2000, "days_of_cover": 60.0000,   "stock_value_at_cost": null,   "status": "healthy"},
+      "SKU-006": {"on_hand_qty": 30,   "first_sale_date": "2026-03-22", "last_sale_date": "2026-03-31", "units_in_window": 6,  "window_days": 10, "avg_daily_units": 0.6000, "days_of_cover": 50.0000,   "stock_value_at_cost": 240.00, "status": "healthy"},
+      "SKU-007": {"on_hand_qty": 15,   "first_sale_date": null,         "last_sale_date": null,         "units_in_window": 0,  "window_days": 30, "avg_daily_units": 0.0000, "days_of_cover": null,      "stock_value_at_cost": 75.00,  "status": "dead"},
+      "00810":   {"on_hand_qty": 0,    "first_sale_date": "2026-02-20", "last_sale_date": "2026-03-15", "units_in_window": 1,  "window_days": 30, "avg_daily_units": 0.0333, "days_of_cover": 0.0000,    "stock_value_at_cost": 0.00,   "status": "out_of_stock"},
+      "SKU-009": {"on_hand_qty": 3,    "first_sale_date": "2026-01-20", "last_sale_date": "2026-03-26", "units_in_window": 2,  "window_days": 30, "avg_daily_units": 0.0667, "days_of_cover": 45.0000,   "stock_value_at_cost": 645.00, "status": "healthy"},
+      "SKU-999": {"on_hand_qty": null, "first_sale_date": "2026-02-10", "last_sale_date": "2026-03-31", "units_in_window": 1,  "window_days": 30, "avg_daily_units": 0.0333, "days_of_cover": null,      "stock_value_at_cost": null,   "status": "unknown"}
+    },
+    "totals": {
+      "stock_value_at_cost": 1992.00,
+      "slow_stock_value": 800.00,
+      "dead_stock_value": 225.00
+    }
+  },
+
+  "recommendations": {
+    "_note": "Computed on the full date range with default thresholds.",
+    "reorder_risk": ["SKU-001"],
+    "clearance_candidate": ["SKU-003"],
+    "selling_below_cost": ["SKU-004"],
+    "low_margin_best_seller": ["SKU-009"],
+    "data_gap": false
+  }
+}
